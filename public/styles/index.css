@@ -1,3 +1,4 @@
+/* Variables */
 :root {
     --black: rgb(37, 37, 37);
     --trans-black: rgba(0, 0, 0, 0.15);
@@ -13,39 +14,6 @@
     margin: 0;
     background-color: #f9f9ff;
     /* border: solid 1px black; */
-}
-
-nav, nav p {
-    color: white;
-    background-color: rgb(31, 167, 31);
-    font-size: 0.9rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.4rem 0;
-    position: fixed;
-    z-index: 5;
-    left: 0;
-    top: 0;
-    width: 100%;
-    opacity: 0;
-    visibility: hidden;
-    text-align: center;
-    transition: visibility 0.95s, opacity 0.95s;
-}
-
-/* nav p {
-    background-color: rgb(31, 167, 31);
-    opacity: 0;
-    visibility: hidden;
-    transition: visibility 0.95s, opacity 0.95s;
-} */
-
-.nav-visibility {
-    text-align: center;
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.15s linear !important;
 }
 
 /* Centers main content */
@@ -68,7 +36,7 @@ section:first-of-type > div > div {
 } 
 
 .main-left-container {
-    margin-right: 4rem;
+    width: 30rem;
 }
 
 .main-left-container p {
@@ -96,7 +64,7 @@ section:first-of-type > div > div {
     transition: background-color 0.15s, box-shadow 0.05s;
 }
 
-.main-left-container button:active {
+button:active {
     box-shadow: var(--active);
 }
 
@@ -140,6 +108,7 @@ section:first-of-type > div > div {
         order: 2;
         margin: 0;
         text-align: center;
+        width: auto;
     }
 }
 
