@@ -18,10 +18,6 @@ app.get('*', (req, res) => {
     res.redirect('/');
 });
 
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../index.html'));
-// });
-
 // Mail
 app.post('/send-contact-form', upload.none(), (req, res) => {
     const reqObj = Object.assign({}, req.body);
@@ -47,7 +43,7 @@ app.post('/send-contact-form', upload.none(), (req, res) => {
     });
 
     let receiver = {
-        from: 'node-mind-grig@outlook.com',
+        from: 'process.env.TRANSPORTER_USER',
         to: 'ephraim.williamson91@ethereal.email',
         subject: `${reqObj.subject}`,
         html: `<h4>Message from <strong>${reqObj.name}</strong> < ${reqObj.email} ></h4>
