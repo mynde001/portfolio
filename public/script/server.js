@@ -34,7 +34,6 @@ app.post('/send-contact-form', upload.none(), (req, res) => {
 
     let transporter = nodemailer.createTransport({
         host: 'smtp-mail.outlook.com',
-        host: 'smtp.ethereal.email',
         port: 587,
         auth: {
             user: process.env.TRANSPORTER_USER,
@@ -47,8 +46,8 @@ app.post('/send-contact-form', upload.none(), (req, res) => {
     });
 
     let receiver = {
-        from: 'node-mind-grig@outlook.com',
-        to: 'ephraim.williamson91@ethereal.email',
+        from: process.env.TRANSPORTER_USER,
+        to: 'mind.grig@gmail.com',
         subject: `${reqObj.subject}`,
         html: `<h4>Message from <strong>${reqObj.name}</strong> < ${reqObj.email} ></h4>
         <p>${reqObj.message}</p>`
