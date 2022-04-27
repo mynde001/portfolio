@@ -6,14 +6,19 @@
     --active: 0px 0px 0px 4px rgba(78, 148, 228, 0.15);
     --gradient: linear-gradient(to right, rgb(151, 152, 219), rgb(104, 185, 231));
     --polygon: polygon(0 0, 100% 6%, 100% 94%, 0 100%);
+    --trans: transform .2s, background-color 0.15s, box-shadow 0.05s, opacity 0.05s;
+    --grid-pad: 1.5rem 0;
     --vh: 50vh;
 }
 
 * {
     font-family: Poppins, sans-serif;
     margin: 0;
-    background-color: #f9f9ff;
     /* border: solid 1px black; */
+}
+
+body {
+    background-color: #f9f9ff;
 }
 
 /* Centers main content */
@@ -61,13 +66,18 @@ section:first-of-type > div > div {
     color: white;
     cursor: pointer;
     white-space: nowrap;
-    transition: background-color 0.15s, box-shadow 0.05s;
+    transition: var(--trans);
+    margin-right: 0.5rem;
 }
 
 button:active {
     box-shadow: var(--active);
 }
 
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
 /* .second-section {
     overflow: hidden;
 }
@@ -108,6 +118,7 @@ button:active {
         order: 2;
         margin: 0;
         text-align: center;
+        justify-content: center;
         width: auto;
     }
 }

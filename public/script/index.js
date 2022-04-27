@@ -19,14 +19,9 @@ let mainContainer = document.querySelector('.main-left-container');
 
 let mainButton = mainContainer.querySelector('button');
 
-// Animate.style lib
-(() => {
-    mainButton.classList.add('animate__animated', 'animate__bounceIn');
-})(); 
-
 // Footer date
 (() => {
-    const getDate = document.querySelector('footer > div > span');
+    const getDate = document.querySelector('footer span');
     getDate.textContent = new Date().getFullYear();
 })();
 
@@ -46,11 +41,8 @@ let formBtn = document.querySelector('form button');
 // Pop up bar
 let notification = document.querySelector('.notification');
 
-// Pop up bar children
-let children = Array.from(notification.children);
-
 // P elements of second child
-let p = children[1].children;
+let p = notification.children[1].children;
 
 // Removes visibility class on click or automatically
 const disableVisibility = () => {
@@ -158,7 +150,7 @@ form.addEventListener('submit', e => {
         })
         .catch(error => {
             if (error) {
-                popup('#ff0000', 'fa-circle-exclamation', 'Error', 'An error occured while sending the email message');
+                popup('#ff0000', 'fa-circle-exclamation', 'Error', 'There was a problem delivering your message');
             };
         }).finally(() => {
                 disableVisibility();
