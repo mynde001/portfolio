@@ -18,10 +18,6 @@ app.get('*', (req, res) => {
     res.redirect('/');
 });
 
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../index.html'));
-// });
-
 // Mail
 app.post('/send-contact-form', upload.none(), (req, res) => {
     const reqObj = Object.assign({}, req.body);
