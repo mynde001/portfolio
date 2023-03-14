@@ -1,0 +1,118 @@
+/* Variables */
+:root {
+    --black: rgb(37, 37, 37);
+    --trans-black: rgba(0, 0, 0, 0.15);
+    --border: 0.1rem;
+    --active: 0px 0px 0px 4px rgba(78, 148, 228, 0.15);
+    --gradient: linear-gradient(to right, rgb(151, 152, 219), rgb(104, 185, 231));
+    --polygon: polygon(0 0, 100% 6%, 100% 94%, 0 100%);
+    --trans: transform .2s, background-color 0.15s, box-shadow 0.05s, opacity 0.05s;
+    --grid-pad: 1.5rem 0;
+    --vh: 50vh;
+}
+
+* {
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    /* border: solid 1px black; */
+}
+
+body {
+    background-color: #f9f9ff;
+}
+
+/* Centers main content */
+section:first-of-type > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--vh);
+}
+
+/* Aligns content horizontally */
+section:first-of-type > div > div {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.main-image {
+    width: 25rem;
+} 
+
+.main-left-container {
+    width: 30rem;
+}
+
+.main-left-container p {
+    padding: 0 0 0.2rem 0;
+    font-size: 0.95rem;
+    color: var(--black);
+}
+
+.main-left-container p:nth-child(2) {
+    font-size: 1.55rem;
+}
+
+.main-left-container > div {
+    margin-bottom: 0.9rem;
+}
+
+.main-left-container button {
+    background-image: var(--gradient);
+    border-radius: var(--border);
+    padding: 0.6rem 2rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--trans);
+    margin-right: 0.5rem;
+}
+
+button:active {
+    box-shadow: var(--active);
+}
+
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
+
+/* Media */
+@media (max-width: 1024px) {
+    section:first-of-type > div > div {
+        flex-direction: column;
+    }
+
+    .main-image {
+        order: 1;
+        margin: 3rem 0;
+    }
+
+    .main-left-container {
+        order: 2;
+        margin: 0;
+        text-align: center;
+        justify-content: center;
+        width: auto;
+    }
+}
+
+@media (max-width: 481px) {
+    .main-image {
+        width: 15rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .main-image {
+        width: 12rem;
+    }
+}
+
+@media (max-width: 240px) {
+    .main-image {
+        width: 10rem;
+    }
+}

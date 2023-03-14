@@ -1,0 +1,6 @@
+.third-section > div {
+    background-color: #f4f5fd;
+    min-height: var(--vh);
+    clip-path: var(--polygon);
+    padding: 3rem 2rem;
+}
